@@ -10,9 +10,9 @@ import (
 
 func main(){
 	http.HandleFunc("/register",hanlder.Register())
-	http.HandleFunc("/login",func(w http.ResponseWriter, r *http.Request) {})
-	http.HandleFunc("/logout",func(w http.ResponseWriter, r *http.Request) {})
-	http.HandleFunc("/protected",func(w http.ResponseWriter, r *http.Request) {})
+	http.HandleFunc("/login",hanlder.Login())
+	http.HandleFunc("/logout",hanlder.LogOut())
+	http.HandleFunc("/protected",hanlder.ProtectedRoute())
 	http.ListenAndServe(":8080",nil)
 
 }
